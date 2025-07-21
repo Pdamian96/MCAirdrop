@@ -1,10 +1,18 @@
 
 
-function airdrop:steps/steps/random_coordinate with storage minecraft:mca settings
+function airdrop:steps/random_coordinate with storage minecraft:mca settings
 tellraw @a ["x: ",{"score":{"name":"x","objective":"mca.airdrop_properties"}},"\nz: ",{"score":{"name":"z","objective":"mca.airdrop_properties"}}]
+bossbar set minecraft:airdrop color red
+
+scoreboard players set $first_countdown mca.timers 10
+scoreboard players operation $first_countdown mca.timers = $first_countdown mca.settings
 
 
+bossbar set airdrop name ["",{"color":"white","text":"Airdrop Landing at:"},{"shadow_color":0,"text":" "},{"color":"red","shadow_color":0,"text":"x"},{"color":"dark_red","shadow_color":0,"score":{"name":"x","objective":"mca.airdrop_properties"}},{"color":"dark_gray","shadow_color":0,"text":" |"},{"shadow_color":0,"text":" "},{"color":"red","shadow_color":0,"text":"z"},{"color":"dark_red","shadow_color":0,"score":{"name":"z","objective":"mca.airdrop_properties"}}]
+bossbar set airdrop visible true
 
+execute store result storage mca properties.x int 1 run scoreboard players get x mca.airdrop_properties
+execute store result storage mca properties.z int 1 run scoreboard players get z mca.airdrop_properties
 
 
 

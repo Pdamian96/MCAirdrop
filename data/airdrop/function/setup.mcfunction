@@ -16,3 +16,11 @@ execute store result storage mca settings.z int 1 run scoreboard players get z m
 
 
 scoreboard objectives add mca.airdrop_properties dummy
+
+
+
+bossbar add airdrop [{"text":"Airdrop Landing at: x"},{"score":{"name":"x","objective":"mca.airdrop_properties"}},{"text":"z"},{"score":{"name":"z","objective":"mca.airdrop_properties"}}]
+bossbar set airdrop visible false
+bossbar set airdrop color red
+bossbar set airdrop max 100
+
