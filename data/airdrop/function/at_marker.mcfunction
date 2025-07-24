@@ -1,0 +1,1 @@
+execute as @a[scores={mca.kills=1..}] run scoreboard players add $kills mca.airdrop_properties 1

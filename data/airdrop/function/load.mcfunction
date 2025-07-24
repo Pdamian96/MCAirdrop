@@ -4,3 +4,6 @@ function airdrop:settings
 scoreboard players set $first_countdown mca.timers -1
 scoreboard players set $second_countdown mca.timers -1
 scoreboard players operation $airdrop_cooldown mca.timers = $airdrop_cooldown mca.settings
+
+execute store result storage mca settings.x int 1 run scoreboard players get x mca.settings
+execute store result storage mca settings.z int 1 run scoreboard players get z mca.settings

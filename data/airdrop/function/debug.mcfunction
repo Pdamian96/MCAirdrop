@@ -1,0 +1,1 @@
+$execute positioned $(x) 100 $(z) positioned over world_surface run tellraw @a[tag=admin] ["",{"text":"Teleport to Drop: "},"\n",{"color":"dark_green","text":"[‼]","clickEvent":{"action":"run_command","value":"/tp @s $(x) ~ $(z)"}}]

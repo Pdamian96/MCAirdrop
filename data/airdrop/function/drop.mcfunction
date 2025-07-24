@@ -1,7 +1,13 @@
 
 
+execute store result storage mca settings.x int 1 run scoreboard players get x mca.settings
+execute store result storage mca settings.z int 1 run scoreboard players get z mca.settings
+
+scoreboard players set $deaths mca.airdrop_properties 0
+scoreboard players set $kills mca.airdrop_properties 0
+scoreboard players set @a mca.kills 0
+
 function airdrop:steps/random_coordinate with storage minecraft:mca settings
-tellraw @a ["x: ",{"score":{"name":"x","objective":"mca.airdrop_properties"}},"\nz: ",{"score":{"name":"z","objective":"mca.airdrop_properties"}}]
 bossbar set minecraft:airdrop color red
 
 scoreboard players set $first_countdown mca.timers 10
@@ -14,7 +20,7 @@ bossbar set airdrop visible true
 execute store result storage mca properties.x int 1 run scoreboard players get x mca.airdrop_properties
 execute store result storage mca properties.z int 1 run scoreboard players get z mca.airdrop_properties
 
-
+function airdrop:debug with storage mca properties
 
 
 
